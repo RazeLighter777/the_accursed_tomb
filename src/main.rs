@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 mod card_deck;
 mod table;
 mod player;
@@ -60,19 +61,19 @@ mod tests {
     fn game_board_string_test() {
         let game_board_expected = "++++++++\n++++++++\n++++++++\n++++++++\n++++++++\n++++++++\n++++++++\n++++++++\nVormithrax, Biblo, Gandalf, Sauron";
         let game = Game::new();
-        assert_eq!(game.get_game_board_string(), game_board_expected);
+        assert_eq!(game.get_game_board_string(), game_board_expected, "Game board string did not match");
     }
     #[test]
     fn show_player_order_test() {
         let game = Game::new();
         let expected_player_order = "Vormithrax, Biblo, Gandalf, Sauron";
-        assert_eq!(player::get_comma_seperated_player_names(&game.players), expected_player_order);
+        assert_eq!(player::get_comma_seperated_player_names(&game.players), expected_player_order, "Player order unexpected");
     }
     #[test]
     fn rotate_player_order_test() {
         let mut game = Game::new();
         let expected_player_order = "Biblo, Gandalf, Sauron, Vormithrax";
         game.players.rotate_left(1);
-        assert_eq!(player::get_comma_seperated_player_names(&game.players), expected_player_order);
+        assert_eq!(player::get_comma_seperated_player_names(&game.players), expected_player_order, "Player order rotation unexpected");
     }
 }
