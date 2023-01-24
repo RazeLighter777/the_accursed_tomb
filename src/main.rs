@@ -1,9 +1,3 @@
-
-/**
- * This method adds two to the number given.
- * @param a The number to which two will be added.
- * @return The result of the addition.
- */
 mod card_deck;
 mod table;
 mod player;
