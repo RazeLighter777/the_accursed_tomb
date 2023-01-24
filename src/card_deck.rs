@@ -140,6 +140,8 @@ impl Card {
             Card(Suit::Joker, _) => CardMeaning::Trap,
             //3s are weapons
             Card(_, Rank::Three) => CardMeaning::Weapon,
+            //Jacks are armor
+            Card(_, Rank::Jack) => CardMeaning::Armor,
             //4,5 are walls
             Card(_, Rank::Four | Rank::Five) => CardMeaning::Wall,
             //all others are hallways
@@ -226,6 +228,7 @@ pub enum CardMeaning {
     Hallway,
     Altar,
     Wall,
+    Armor,
     ArchDaemon(ArchDaemon),
     Weapon,
     Portal,
@@ -257,6 +260,7 @@ impl CardMeaning {
             CardMeaning::Troll => "👾",
             CardMeaning::Merchant => "🤑",
             CardMeaning::Trap => "🔥",
+            CardMeaning::Armor => "[",
         }
     }
 }

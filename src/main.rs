@@ -27,7 +27,30 @@ impl Game {
     }
 }
 fn main() {
-    let game = Game::new();
+    /**
+     * Your game simulation will include a menu that initially has three commands:
+
+SHOW GAME AREA - displays everything necessary to observe and understand the progress of the game (e.g., a text-based representation of the game board, player hands, the score board, etc.)
+SHOW PLAYER ORDER - shows player names in the order they will play
+ADVANCE ORDER - moves the player who is currently "up" to the end of the playing order, and advances the "next" player to be "up"
+
+     */
+    let mut game = Game::new();
+    loop {
+        println!("Please enter a command: ");
+        let mut command = String::new();
+        std::io::stdin().read_line(&mut command).expect("Failed to read line");
+        let command = command.trim();
+        match command {
+            "SHOW GAME AREA" => println!("{}", game.get_game_board_string()),
+            "SHOW PLAYER ORDER" => println!("{}", player::get_comma_seperated_player_names(&game.players)),
+            "ADVANCE ORDER" => {
+                game.players.rotate_left(1);
+                println!("Player order has been advanced");
+            },
+            _ => println!("Invalid command"),
+        }
+    }
 }
 
 #[cfg(test)]
