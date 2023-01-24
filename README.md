@@ -52,7 +52,7 @@ If the player kills a demon, they win the game.
 Any card that is not a wall, monster, trap, fountain, blessing, altar, portal, merchant, or demon is a hallway. Hallways are empty tiles that the player may move through.
 
 # Objective
-The game continues until either all players are eliminated (in which case the final player wins), or a demon is killed (in which case the player that killed the demon wins).
+The game continues until either all players are eliminated (in which case the final remaining player wins), or a demon is killed (in which case the player that killed the demon wins).
 
 # Weapons (Threes)
 Weapons are cards that are picked up by the player (and reverted to hallways). They are used in combat to increase the players damage. The player's damage is multiplied by the number of weapons they possess.
