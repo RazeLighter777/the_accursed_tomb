@@ -21,7 +21,7 @@ For every turn the player is in combat, the monster rolls first. The monster rol
 
 The player then rolls one dice. The player does damage equal do their roll multiplied by the number of weapons they possess (See weapons section).
 
-The player's HP is also multiplied by the number of armors they possess (See armor section).
+The player's maximum HP is also multiplied by the number of armors they possess (See armor section).
 
 When the monster is killed (HP <= 0), the monster card turns to a normal tile (a king)
 
