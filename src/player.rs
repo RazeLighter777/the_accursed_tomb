@@ -1,11 +1,13 @@
 pub struct Player {
     name : String,
+    hp : u32
 }
 
 impl Player {
     pub fn new(name : String) -> Player {
         Player {
             name,
+            hp : 10
         }
     }
 }
@@ -14,7 +16,7 @@ pub fn get_comma_seperated_player_names(players : &Vec<Player>) -> String {
     let mut player_names = String::new();
     for player in players {
         player_names.push_str(&player.name);
-        player_names.push_str(", ");
+        player_names.push_str(&format!(" HP: {}, ",player.hp));
     }
     player_names.pop();
     player_names.pop();
