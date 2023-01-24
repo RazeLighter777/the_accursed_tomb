@@ -27,6 +27,20 @@ impl Table {
             self.cards[x][y].as_ref()
         }
     }
+    pub fn get_emoji_table_string(&self) -> String {
+        let mut table_string = String::new();
+        for row in self.cards.iter() {
+            for card in row.iter() {
+                if let Some(card) = card {
+                    table_string.push_str(&card.get_card_meaning().emoji());
+                } else {
+                    table_string.push_str("+");
+                }
+            }
+            table_string.push_str("\n");
+        }
+        table_string
+    }
 }
 
 #[cfg(test)]
@@ -39,20 +53,5 @@ mod tests {
         assert!(card.is_some());
         let card = table.draw_or_view_card_at(0, 0);
         assert!(card.is_some());
-    }
-    #[test]
-    pub fn print_out_emoji_table() {
-        let mut table = Table::new();
-        for i in 0..7 {
-            for j in 0..7 {
-                let card = table.draw_or_view_card_at(i, j);
-                if let Some(card) = card {
-                    print!("{}\t", card.get_card_meaning().emoji());
-                } else {
-                    print!("{} ", "🂠");
-                }
-            }
-            println!();
-        }
     }
 }

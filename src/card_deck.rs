@@ -269,7 +269,7 @@ mod tests {
     fn test_peek_and_move_to_back() {
         let mut deck = Deck::default();
         let card = deck.peek_and_move_to_back();
-        assert!(card.is_some());
+        assert!(card.is_some(),"Could not peek at card");
     }
     #[test]
     fn draw_all() {
@@ -278,7 +278,7 @@ mod tests {
             println!("{}", card.get_card_rendering_horizontal());
             println!("{}", card.get_card_rendering_vertical());
         }
-        assert_eq!(deck.cards_remaining(), 0);
+        assert_eq!(deck.cards_remaining(), 0,"Whole deck was not drawn");
     }
 
     #[test]
@@ -287,7 +287,7 @@ mod tests {
         let mut deck1 = Deck::default();
         let deck2 = Deck::default();
         deck1.extend(deck2);
-        assert_eq!(deck1.cards_remaining(), 108);
+        assert_eq!(deck1.cards_remaining(), 108,"Deck could not be extended");
     }
     #[test]
     fn shuffle() {
@@ -297,7 +297,7 @@ mod tests {
         let mut deck2 = Deck::default();
         deck1.shuffle();
         deck2.sort_hand();
-        assert_ne!(deck1.cards, deck2.cards);
+        assert_ne!(deck1.cards, deck2.cards,"Deck did not shuffle properly");
     }
 
 }

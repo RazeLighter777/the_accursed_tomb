@@ -1,6 +1,6 @@
 use rand::{self, Rng};
 
-struct Dice {
+pub struct Dice {
     sides : u8,
     roll : u32
 }
