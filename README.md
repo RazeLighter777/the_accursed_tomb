@@ -44,7 +44,7 @@ If the player encounters a portal (2 clubs), they may move to any tile on the ma
 # Merchant (2 Diamonds)
 If the player encounters a merchant (2 diamonds), they may chose an armor or a weapon. The card is then reset to a hallway (king)
 
-# Demon (10)
+# Demon (10s)
 If the player encounters a demon (10), combat begins. (See combat section)
 If the player kills a demon, they win the game.
 
